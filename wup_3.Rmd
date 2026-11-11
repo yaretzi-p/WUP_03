@@ -45,8 +45,11 @@ The graph demonstrates that the students who sit in the back tend to consume mor
   
 
 
-## Numerical Summarys 
-
+## Numerical Summaries
+```{r}
+favstats(alcohol~Seat,data=davisdata)
+```
+The numerical summary shows that the students who sit in the back drink more ounces per week than the students who sit in the middle and the front.
 ## Inferential Tests
 
 ## Conclusions
