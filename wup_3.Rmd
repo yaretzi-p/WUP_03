@@ -29,9 +29,7 @@ $H_A$ There is a relationship between where you sit in class and how much you dr
 
 
 # Methods
-Seat is categorical. 
-Alcohol is numerical.
-
+The explanatory variable is the row in which a student chooses to sit, which is categorical. The response variable is weekly alcohol consumption, which is numerical and measured in equivalent ounces. We will use a boxplot, numerical summaries, and an ANOVA test to determine whether there is a statistically significant difference in alcohol consumption among the three seating groups.
 
 # Data Summaries 
 
@@ -51,7 +49,10 @@ favstats(alcohol~Seat,data=davisdata)
 ```
 The numerical summary shows that the students who sit in the back drink more ounces per week than the students who sit in the middle and the front.
 ## Inferential Tests
-
+```{r}
+model <- aov(alcohol~Seat, data=davisdata)
+summary(model)
+```
 ## Conclusions
 
 
