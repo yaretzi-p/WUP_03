@@ -32,7 +32,7 @@ $H_A$ There is a relationship between where you sit in class and how much you dr
 The explanatory variable is the row in which a student chooses to sit, which is categorical. The response variable is weekly alcohol consumption, which is numerical and measured in equivalent ounces. We will use a boxplot, numerical summaries, and an ANOVA test to determine whether there is a statistically significant difference in alcohol consumption among the three seating groups.
 
 # Data Summaries 
-
+To examine the relationship between classroom seating and weekly alcohol consumption, we will use a boxplot and numerical summaries to compare students who sit in the front, middle, and back of the classroom.
 
 ## Now add in boxplot
 
@@ -48,11 +48,14 @@ The graph demonstrates that the students who sit in the back tend to consume mor
 favstats(alcohol~Seat,data=davisdata)
 ```
 The numerical summary shows that the students who sit in the back drink more ounces per week than the students who sit in the middle and the front.
+
 ## Inferential Tests
 ```{r}
 model <- aov(alcohol~Seat, data=davisdata)
 summary(model)
 ```
-## Conclusions
+The ANOVA test resulted in an F-value of 9.656 and a p-value of 0.000116. Since the p-value is less than the significance level of 0.05, the results are statistically significant.
 
+## Conclusions
+Since the p-value of 0.000116 is less than 0.05, we reject the null hypothesis. There is sufficient statistical evidence to suggest that there is a relationship between where students sit in the classroom and their weekly alcohol consumption. Based on the boxplot and numerical summaries, students who sit in the back tend to consume more alcohol than students who sit in the middle or front. However, this does not mean that sitting in the back causes students to consume more alcohol.
 
